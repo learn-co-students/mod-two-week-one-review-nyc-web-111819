@@ -1,28 +1,38 @@
+
+<div class="container">
+
 <%= form_for @sea do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <h5><%= f.label :name %></h5>
+    <%= f.text_field :name, class: "form-control"  %>
 
-  <%= f.label :temperature %>
-  <%= f.number_field :temperature %>
+    <h5><%= f.label :temperature %></h5>
+   <%= f.number_field :temperature, class: "form-control"  %>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+    <h5><%= f.label :bio %></h5>
+    <%= f.text_area :bio, class: "form-control"  %>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+    <h5><%= f.label :image_url %></h5>
+    <%= f.text_field :image_url, class: "form-control"  %>
 
-  <%= f.label :mood %>
-  <%= f.text_field :mood %>
+    <h5><%= f.label :mood %></h5>
+    <%= f.text_field :mood, class: "form-control"  %>
 
-  <%= f.label :favorite_color %>
-  <%= f.text_field :favorite_color %>
+    <h5><%= f.label :favorite_color %></h5>
+    <%= f.text_field :favorite_color, class: "form-control"  %>
 
-  <%= f.label :scariest_creature %>
-  <%= f.text_field :scariest_creature %>
+    <h5><%= f.label :scariest_creature %></h5>
+    <%= f.text_field :scariest_creature, class: "form-control" %>
 
-  <%= f.label :has_mermaids %>
-  <%= f.check_box :has_mermaids %>
+    <%= f.label :has_mermaids %>
+    <%= f.check_box :has_mermaids %>
 
-  <%=  f.submit %>
+   <p><%= button_to "Submit", sea_path(@sea), method: :get, class: "form-control btn btn-info" %>
+  
 
-  <% end %>
+    <% end %>
+  <div class="col-sm-11">
+    <%= button_to "Back", sea_path(@sea), method: :get, class: "btn btn-info", form: {style: 'display:inline-block;'}%>
+    <%= button_to "All Seas", seas_path, method: :get, class: "btn btn-info", form: {style: 'display:inline-block;'}%>
+  </div>
+    <%= button_to "Delete", sea_path(@sea), method: :delete, class: "btn btn-danger", data: {confirm: "REALLY?"}, form: {style: 'display:inline-block;'}%>
+</div>
